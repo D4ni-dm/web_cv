@@ -1,8 +1,8 @@
-function Header() {
+function Header({ nombre, titulo }) {
     return (
         <header>
-            <h1>Daniel Díaz Millán</h1>
-            <p>Desarrollador Web</p>
+            <h1>{nombre}</h1>
+            <p>{titulo}</p>
         </header>
     )
 }
