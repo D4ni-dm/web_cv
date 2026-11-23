@@ -1,4 +1,4 @@
-import habilidades from "../data/habilidades";
+import habilidades from '../data/habilidades.js';
 
 function Skills() {
     return (
