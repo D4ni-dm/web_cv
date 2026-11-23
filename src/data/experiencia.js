@@ -11,6 +11,6 @@ const experiencias = [
             "Ajusté textos y atributos (alt, title, metadatos) para la accesibilidad y el SEO en cada idioma."
         ], 
     }
-]
+];
 
-export default experiencias
+export default experiencias;
