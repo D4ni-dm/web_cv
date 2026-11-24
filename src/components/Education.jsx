@@ -1,9 +1,9 @@
+import Section from './Section.jsx'
 import formaciones from '../data/formacion.js'
 
 function Education() {
     return (
-        <section>
-            <h2>Formación</h2>
+        <Section titulo="Formación">
             <ul>
                 {formaciones.map((formacion) => (
                     <li key={formacion.id}>
@@ -13,7 +13,7 @@ function Education() {
                     </li>
                 ))}
             </ul>
-        </section>
+        </Section>
     )
 }
 

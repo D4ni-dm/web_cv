@@ -1,9 +1,9 @@
+import Section from './Section.jsx'
 import proyectos from '../data/proyectos.js'
 
 function Projects() {
     return (
-        <section>
-            <h2>Proyectos</h2>
+        <Section titulo="Proyectos">
             <ul>
                 {proyectos.map((proyecto) => (
                     <li key={proyecto.id}>
@@ -19,7 +19,7 @@ function Projects() {
                     </li>
                 ))}
             </ul>
-        </section>
+        </Section>
     )
 }
 

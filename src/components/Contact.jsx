@@ -1,9 +1,9 @@
+import Section from './Section.jsx'
 import contactos from '../data/contactos.js'
 
 function Contact() {
     return (
-        <section>
-            <h2>Contacto</h2>
+        <Section titulo="Contacto">
             <ul>
                 {contactos.map((contacto) => (
                     <li key={contacto.id}>
@@ -11,7 +11,7 @@ function Contact() {
                     </li>
                 ))}
             </ul>
-        </section>
+        </Section>
     )
 }
 

@@ -1,9 +1,9 @@
+import Section from './Section.jsx'
 import experiencias from '../data/experiencia.js'
 
 function Experience() {
     return (
-        <section>
-            <h2>Experiencia</h2>
+        <Section titulo="Experiencia">
             <ul>
                 {experiencias.map((experiencia) => (
                     <li key={experiencia.id}>
@@ -18,7 +18,7 @@ function Experience() {
                     </li>
                 ))}
             </ul>
-        </section>
+        </Section>
     )
 }
 
