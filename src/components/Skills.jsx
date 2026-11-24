@@ -1,4 +1,4 @@
-import habilidades from '../data/habilidades.js';
+import habilidades from '../data/habilidades.js'
 
 function Skills() {
     return (
@@ -20,4 +20,4 @@ function Skills() {
     )
 }
 
-export default Skills;
+export default Skills

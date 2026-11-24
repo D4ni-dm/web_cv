@@ -1,4 +1,4 @@
-import proyectos from '../data/proyectos.js';
+import proyectos from '../data/proyectos.js'
 
 function Projects() {
     return (
@@ -23,4 +23,4 @@ function Projects() {
     )
 }
 
-export default Projects;
+export default Projects

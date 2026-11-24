@@ -1,4 +1,4 @@
-import contactos from '../data/contactos.js';
+import contactos from '../data/contactos.js'
 
 function Contact() {
     return (
@@ -15,4 +15,4 @@ function Contact() {
     )
 }
 
-export default Contact;
+export default Contact

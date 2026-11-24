@@ -1,10 +1,10 @@
 function Header({ nombre, titulo }) {
     return (
-        <header>
-            <h1>{nombre}</h1>
-            <p>{titulo}</p>
+        <header className='max-w-3xl mx-auto px-6 py-16 text-center'>
+            <h1 className='text-5xl font-bold tracking-tight text-gray-900'>{nombre}</h1>
+            <p className='mt-3 text-xl text-blue-600 font-medium'>{titulo}</p>
         </header>
     )
 }
 
-export default Header;
+export default Header

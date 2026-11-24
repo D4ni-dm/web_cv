@@ -1,4 +1,3 @@
-import './App.css'
 import Header from './components/Header.jsx'
 import About from './components/About.jsx'
 import Education from './components/Education.jsx'
@@ -9,9 +8,9 @@ import Contact from './components/Contact.jsx'
 
 function App() {
   return (
-    <>
+    <div className='min-h-screen bg-gray-50 text-gray-800'>
       <Header nombre="Daniel Díaz Millán" titulo="Desarrollador Web" />
-      <main>
+      <main className='max-w-3xl mx-auto px-6 pb-16'>
         <About />
         <Experience />
         <Education />
@@ -19,7 +18,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
-    </>
+    </div>
   )
 
 }

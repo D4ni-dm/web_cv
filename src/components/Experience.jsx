@@ -1,4 +1,4 @@
-import experiencias from '../data/experiencia.js';
+import experiencias from '../data/experiencia.js'
 
 function Experience() {
     return (
@@ -22,4 +22,4 @@ function Experience() {
     )
 }
 
-export default Experience;
+export default Experience
