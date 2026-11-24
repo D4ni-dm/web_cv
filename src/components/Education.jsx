@@ -4,12 +4,12 @@ import formaciones from '../data/formacion.js'
 function Education() {
     return (
         <Section titulo="Formación">
-            <ul>
+            <ul className='space-y-8'>
                 {formaciones.map((formacion) => (
                     <li key={formacion.id}>
-                        <h3>{formacion.titulo}</h3>
-                        <p>{formacion.centro}</p>
-                        <p>{formacion.inicio} - {formacion.fin}</p>
+                        <h3 className='text-lg font-semibold text-gray-900'>{formacion.titulo}</h3>
+                        <p className='text-blue-600 font-medium'>{formacion.centro}</p>
+                        <p className='text-sm text-gray-500'>{formacion.inicio} - {formacion.fin}</p>
                     </li>
                 ))}
             </ul>
