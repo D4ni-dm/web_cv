@@ -7,9 +7,9 @@ function Education() {
             <ul className='space-y-8'>
                 {formaciones.map((formacion) => (
                     <li key={formacion.id}>
-                        <h3 className='text-lg font-semibold text-gray-900'>{formacion.titulo}</h3>
-                        <p className='text-blue-600 font-medium'>{formacion.centro}</p>
-                        <p className='text-sm text-gray-500'>{formacion.inicio} - {formacion.fin}</p>
+                        <h3 className='text-lg font-semibold text-gray-900 dark:text-white'>{formacion.titulo}</h3>
+                        <p className='text-blue-600 font-medium dark:text-blue-400'>{formacion.centro}</p>
+                        <p className='text-sm text-gray-500 dark:text-gray-400'>{formacion.inicio} - {formacion.fin}</p>
                     </li>
                 ))}
             </ul>

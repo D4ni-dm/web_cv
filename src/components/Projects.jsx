@@ -8,7 +8,7 @@ function Projects() {
             <ul className='space-y-6'>
                 {proyectos.map((proyecto) => (
                     <li key={proyecto.id}>
-                        <h3 className='text-lg font-semibold text-gray-900'>{proyecto.nombre}</h3>
+                        <h3 className='text-lg font-semibold text-gray-900 dark:text-white'>{proyecto.nombre}</h3>
                         <p className='mt-2 leading-relaxed'>{proyecto.descripcion}</p>
                         <ul className='flex flex-wrap gap-2 mt-3'>
                             {proyecto.tecnologias.map((tecnologia) => (
@@ -16,8 +16,8 @@ function Projects() {
                             ))}
                         </ul>
                         <div className='mt-4 flex gap-4'>
-                            <a href={proyecto.repo} target='_blank' rel='noreferrer' className='text-blue-600 font-medium hover:underline'>Ver repositorio en GitHub</a>
-                            {proyecto.demo && <a href={proyecto.demo} target='_blank' rel='noreferrer' className='text-blue-600 font-medium hover:underline'>Ver demo</a>}
+                            <a href={proyecto.repo} target='_blank' rel='noreferrer' className='text-blue-600 font-medium hover:underline dark:text-blue-400'>Ver repositorio en GitHub</a>
+                            {proyecto.demo && <a href={proyecto.demo} target='_blank' rel='noreferrer' className='text-blue-600 font-medium hover:underline dark:text-blue-400'>Ver demo</a>}
                         </div>
                     </li>
                 ))}

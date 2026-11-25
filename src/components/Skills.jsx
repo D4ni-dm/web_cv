@@ -8,7 +8,7 @@ function Skills() {
             <ul className='space-y-6'>
                 {habilidades.map((categoria) => (
                     <li key={categoria.id}>
-                        <h3 className='font-semibold text-gray-900 mb-2'>{categoria.seccion}</h3>
+                        <h3 className='font-semibold text-gray-900 mb-2 dark:text-white'>{categoria.seccion}</h3>
                         <ul className='flex flex-wrap gap-2'>
                             {categoria.datos.map((habilidad) => (
                                 <Tag key={habilidad}>{habilidad}</Tag>
