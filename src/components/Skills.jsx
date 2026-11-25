@@ -1,16 +1,17 @@
+import Tag from './Tag.jsx'
 import Section from './Section.jsx'
 import habilidades from '../data/habilidades.js'
 
 function Skills() {
     return (
         <Section titulo="Habilidades">
-            <ul>
+            <ul className='space-y-6'>
                 {habilidades.map((categoria) => (
                     <li key={categoria.id}>
-                        <h3>{categoria.seccion}</h3>
-                        <ul>
+                        <h3 className='font-semibold text-gray-900 mb-2'>{categoria.seccion}</h3>
+                        <ul className='flex flex-wrap gap-2'>
                             {categoria.datos.map((habilidad) => (
-                                <li key={habilidad}>{habilidad}</li>
+                                <Tag key={habilidad}>{habilidad}</Tag>
                             ))}
                         </ul>
                     </li>
