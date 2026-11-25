@@ -7,6 +7,7 @@ import Experience from './components/Experience.jsx'
 import Projects from './components/Projects.jsx'
 import Contact from './components/Contact.jsx'
 import ThemeToggle from './components/ThemeToggle.jsx'
+import GitHubRepos from './components/GitHubRepos.jsx'
 
 function App() {
   const [oscuro, setOscuro] = useState(() => {
@@ -37,6 +38,7 @@ function App() {
         <Education />
         <Skills />
         <Projects />
+        <GitHubRepos />
         <Contact />
       </main>
     </div>
