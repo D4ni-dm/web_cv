@@ -9,12 +9,26 @@ import Contact from './components/Contact.jsx'
 import ThemeToggle from './components/ThemeToggle.jsx'
 
 function App() {
-  const [oscuro, setOscuro] = useState(false)
+  const [oscuro, setOscuro] = useState(() => {
+    const guardado = localStorage.getItem('tema')
+
+    if (guardado !== null) {
+      return guardado === 'oscuro'
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+  })
+
+  function cambiarTema() {
+    const nuevo = !oscuro
+    setOscuro(nuevo)
+    localStorage.setItem('tema', nuevo ? 'oscuro' : 'claro')
+  }
   
   return (
     <div className={`min-h-screen bg-gray-50 text-gray-800 ${oscuro ? 'dark' : ''} dark:bg-gray-900 dark:text-gray-300`}>
 
-      <ThemeToggle oscuro={oscuro} cambiarTema={() => setOscuro(!oscuro)} />
+      <ThemeToggle oscuro={oscuro} cambiarTema={cambiarTema} />
 
       <Header nombre="Daniel Díaz Millán" titulo="Desarrollador Web" />
       <main className='max-w-3xl mx-auto px-6 pb-16'>
