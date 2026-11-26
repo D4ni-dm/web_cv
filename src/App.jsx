@@ -1,3 +1,4 @@
+import { IdiomaContext } from './IdiomaContext.js'
 import { useState } from 'react'
 import Header from './components/Header.jsx'
 import About from './components/About.jsx'
@@ -8,6 +9,7 @@ import Projects from './components/Projects.jsx'
 import Contact from './components/Contact.jsx'
 import ThemeToggle from './components/ThemeToggle.jsx'
 import GitHubRepos from './components/GitHubRepos.jsx'
+import LanguageToggle from './components/LanguageToggle.jsx'
 
 function App() {
   const [oscuro, setOscuro] = useState(() => {
@@ -20,28 +22,37 @@ function App() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
 
+  const [idioma, setIdioma] = useState('es')
+
   function cambiarTema() {
     const nuevo = !oscuro
     setOscuro(nuevo)
     localStorage.setItem('tema', nuevo ? 'oscuro' : 'claro')
   }
+
+  function cambiarIdioma() {
+    setIdioma(idioma === 'es' ? 'en' : 'es')
+  }
   
   return (
-    <div className={`min-h-screen bg-gray-50 text-gray-800 ${oscuro ? 'dark' : ''} dark:bg-gray-900 dark:text-gray-300`}>
+    <IdiomaContext value={idioma}>
+      <div className={`min-h-screen bg-gray-50 text-gray-800 ${oscuro ? 'dark' : ''} dark:bg-gray-900 dark:text-gray-300`}>
 
-      <ThemeToggle oscuro={oscuro} cambiarTema={cambiarTema} />
+        <ThemeToggle oscuro={oscuro} cambiarTema={cambiarTema} />
+        <LanguageToggle idioma={idioma} cambiarIdioma={cambiarIdioma} />
 
-      <Header nombre="Daniel Díaz Millán" titulo="Desarrollador Web" />
-      <main className='max-w-3xl mx-auto px-6 pb-16'>
-        <About />
-        <Experience />
-        <Education />
-        <Skills />
-        <Projects />
-        <GitHubRepos />
-        <Contact />
-      </main>
-    </div>
+        <Header nombre="Daniel Díaz Millán" titulo={idioma === 'es' ? 'Desarrollador Web' : 'Web Developer'} />
+        <main className='max-w-3xl mx-auto px-6 pb-16'>
+          <About />
+          <Experience />
+          <Education />
+          <Skills />
+          <Projects />
+          <GitHubRepos />
+          <Contact />
+        </main>
+      </div>
+    </IdiomaContext>
   )
 
 }
