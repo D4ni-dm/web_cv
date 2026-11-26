@@ -1,10 +1,16 @@
+import { useContext } from 'react'
+import textos from '../data/textos.js'
+import { IdiomaContext } from '../IdiomaContext.js'
 import Tag from './Tag.jsx'
 import Section from './Section.jsx'
 import habilidades from '../data/habilidades.js'
 
 function Skills() {
+    const idioma = useContext(IdiomaContext)
+    const t = textos[idioma]
+
     return (
-        <Section titulo="Habilidades">
+        <Section titulo={t.habilidades}>
             <ul className='space-y-6'>
                 {habilidades.map((categoria) => (
                     <li key={categoria.id}>

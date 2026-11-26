@@ -1,9 +1,15 @@
+import { useContext } from 'react'
+import textos from '../data/textos.js'
+import { IdiomaContext } from '../IdiomaContext.js'
 import Section from './Section.jsx'
 import formaciones from '../data/formacion.js'
 
 function Education() {
+    const idioma = useContext(IdiomaContext)
+    const t = textos[idioma]
+
     return (
-        <Section titulo="Formación">
+        <Section titulo={t.formacion}>
             <ul className='space-y-8'>
                 {formaciones.map((formacion) => (
                     <li key={formacion.id}>

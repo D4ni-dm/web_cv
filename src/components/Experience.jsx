@@ -1,9 +1,15 @@
+import { useContext } from 'react'
+import textos from '../data/textos.js'
+import { IdiomaContext } from '../IdiomaContext.js'
 import Section from './Section.jsx'
 import experiencias from '../data/experiencia.js'
 
 function Experience() {
+    const idioma = useContext(IdiomaContext)
+    const t = textos[idioma]
+    
     return (
-        <Section titulo="Experiencia">
+        <Section titulo={t.experiencia}>
             <ul className='space-y-8'>
                 {experiencias.map((experiencia) => (
                     <li key={experiencia.id}>

@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+import textos from '../data/textos.js'
+import { IdiomaContext } from '../IdiomaContext.js'
 import { useEffect, useState } from "react"
 import Section from "./Section.jsx"
 import Tag from "./Tag.jsx"
@@ -28,10 +31,13 @@ function GitHubRepos() {
         cargar()
     }, [])
 
+    const idioma = useContext(IdiomaContext)
+    const t = textos[idioma]
+
     return (
-        <Section titulo="Repositorios de GitHub">
-            {cargando && <p>Cargando repositorios...</p>}
-            {error && <p className="text-red-600 dark:text-red-400">No se pudieron cargar los repositorios: {error}</p>}
+        <Section titulo={t.repositorios}>
+            {cargando && <p>{t.cargando}</p>}
+            {error && <p className="text-red-600 dark:text-red-400">{t.errorRepos} {error}</p>}
             {!cargando && !error && (
                 <ul className="space-y-6">
                     {repos.filter((repo) => !repo.fork).map((repo) => (
