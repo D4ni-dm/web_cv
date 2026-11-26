@@ -1,5 +1,5 @@
 import { IdiomaContext } from './IdiomaContext.js'
-import { useState } from 'react'
+import { useState , useEffect} from 'react'
 import Header from './components/Header.jsx'
 import About from './components/About.jsx'
 import Education from './components/Education.jsx'
@@ -22,7 +22,19 @@ function App() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
 
-  const [idioma, setIdioma] = useState('es')
+  const [idioma, setIdioma] = useState(() => {
+    const guardado = localStorage.getItem('idioma')
+
+    if (guardado !== null) {
+      return guardado
+    }
+
+    return navigator.language.startsWith('es') ? 'es' : 'en'
+  })
+
+  useEffect(() => {
+    document.documentElement.lang = idioma
+  }, [idioma])
 
   function cambiarTema() {
     const nuevo = !oscuro
@@ -31,7 +43,9 @@ function App() {
   }
 
   function cambiarIdioma() {
-    setIdioma(idioma === 'es' ? 'en' : 'es')
+    const nuevo = idioma === 'es' ? 'en' : 'es'
+    setIdioma(nuevo)
+    localStorage.setItem('idioma', nuevo)
   }
   
   return (
