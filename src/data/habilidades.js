@@ -1,45 +1,45 @@
 const habilidades = [
-    { 
-        id: 1, 
-        seccion: "Lenguajes", 
+    {
+        id: 1,
+        seccion: { es: "Lenguajes", en: "Languages" },
         datos: [
-            "Java", 
-            "JavaScript", 
-            "PHP", 
-            "Python", 
-            "CSS", 
-            "HTML", 
-            "XML"
-        ] 
+            "Java",
+            "JavaScript",
+            "PHP",
+            "Python",
+            "CSS",
+            "HTML",
+            "XML",
+        ],
     },
-    { 
-        id: 2, 
-        seccion: "Frameworks", 
+    {
+        id: 2,
+        seccion: { es: "Frameworks", en: "Frameworks" },
         datos: [
-            "React", 
-            "Bootstrap"
-        ] 
+            "React",
+            "Bootstrap",
+        ],
     },
-    { 
-        id: 3, 
-        seccion: "Bases de Datos", 
+    {
+        id: 3,
+        seccion: { es: "Bases de Datos", en: "Databases" },
         datos: [
-            "MySQL", 
-            "MongoDB"
-        ] 
+            "MySQL",
+            "MongoDB",
+        ],
     },
-    { 
-        id: 4, 
-        seccion: "Herramientas", 
+    {
+        id: 4,
+        seccion: { es: "Herramientas", en: "Tools" },
         datos: [
-            "Git", 
-            "GitHub", 
-            "VS Code", 
-            "Linux", 
-            "Vite", 
-            "npm"
-        ]
-    }
+            "Git",
+            "GitHub",
+            "VS Code",
+            "Linux",
+            "Vite",
+            "npm",
+        ],
+    },
 ];
 
 export default habilidades;

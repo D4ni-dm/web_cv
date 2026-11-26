@@ -14,8 +14,8 @@ function Projects() {
             <ul className='space-y-6'>
                 {proyectos.map((proyecto) => (
                     <li key={proyecto.id}>
-                        <h3 className='text-lg font-semibold text-gray-900 dark:text-white'>{proyecto.nombre}</h3>
-                        <p className='mt-2 leading-relaxed'>{proyecto.descripcion}</p>
+                        <h3 className='text-lg font-semibold text-gray-900 dark:text-white'>{proyecto.nombre[idioma]}</h3>
+                        <p className='mt-2 leading-relaxed'>{proyecto.descripcion[idioma]}</p>
                         <ul className='flex flex-wrap gap-2 mt-3'>
                             {proyecto.tecnologias.map((tecnologia) => (
                                 <Tag key={tecnologia}>{tecnologia}</Tag>
