@@ -25,7 +25,7 @@ function App() {
   const [idioma, setIdioma] = useState(() => {
     const guardado = localStorage.getItem('idioma')
 
-    if (guardado !== null) {
+    if (guardado === 'es' || guardado === 'en') {
       return guardado
     }
 
