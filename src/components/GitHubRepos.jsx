@@ -35,6 +35,11 @@ function GitHubRepos() {
 
     const idioma = useContext(IdiomaContext)
     const t = textos[idioma]
+    const otrosRepos = repos.filter((repo) => !repo.fork && !proyectos.some((proyecto) => proyecto.repo === repo.html_url))
+
+    if (!cargando && !error && otrosRepos.length === 0) {
+        return null
+    }
 
     return (
         <Section titulo={t.repositorios}>
@@ -42,7 +47,7 @@ function GitHubRepos() {
             {error && <p className="text-red-600 dark:text-red-400">{t.errorRepos} {error}</p>}
             {!cargando && !error && (
                 <ul className="space-y-6">  
-                    {repos.filter((repo) => !repo.fork && !proyectos.some((proyecto) => proyecto.repo === repo.html_url)).map((repo) => (
+                    {otrosRepos.map((repo) => (
                         <Card key={repo.id}>
                             <h3 className="text-lg font-semibold">
                                 <a href={repo.html_url} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline dark:text-blue-400">
