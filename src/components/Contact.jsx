@@ -9,7 +9,7 @@ function Contact() {
     const t = textos[idioma]
 
     return (
-        <Section titulo={t.contacto}>
+        <Section id="contacto" titulo={t.contacto}>
             <ul className='flex flex-wrap gap-4'>
                 {contactos.map((contacto) => (
                     <li key={contacto.id}>

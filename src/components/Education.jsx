@@ -10,7 +10,7 @@ function Education() {
     const t = textos[idioma]
 
     return (
-        <Section titulo={t.formacion}>
+        <Section id="formacion" titulo={t.formacion}>
             <ul className='space-y-6 border-l-2 border-blue-600/30 dark:border-blue-400/30 ml-3 pl-8'>
                 {formaciones.map((formacion) => (
                     <Card key={formacion.id}>

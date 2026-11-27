@@ -10,7 +10,7 @@ function Experience() {
     const t = textos[idioma]
     
     return (
-        <Section titulo={t.experiencia}>
+        <Section id="experiencia" titulo={t.experiencia}>
             <ul className='space-y-6 border-l-2 border-blue-600/30 dark:border-blue-400/30 ml-3 pl-8'>
                 {experiencias.map((experiencia) => (
                     <Card key={experiencia.id}>

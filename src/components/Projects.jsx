@@ -11,7 +11,7 @@ function Projects() {
     const t = textos[idioma]
 
     return (
-        <Section titulo={t.proyectos}>
+        <Section id="proyectos" titulo={t.proyectos}>
             <ul className='space-y-6'>
                 {proyectos.map((proyecto) => (
                     <Card key={proyecto.id}>

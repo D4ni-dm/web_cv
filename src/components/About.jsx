@@ -8,7 +8,7 @@ function About() {
     const t = textos[idioma]
     
     return (
-        <Section titulo={t.sobreMi}>
+        <Section id="sobre-mi" titulo={t.sobreMi}>
             <div className='space-y-4 leading-relaxed'>
                 {t.sobreMiTexto.map((parrafo) => (
                     <p key={parrafo}>{parrafo}</p>

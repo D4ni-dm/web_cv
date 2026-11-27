@@ -10,7 +10,7 @@ function Skills() {
     const t = textos[idioma]
 
     return (
-        <Section titulo={t.habilidades}>
+        <Section id="habilidades" titulo={t.habilidades}>
             <ul className='space-y-6'>
                 {habilidades.map((categoria) => (
                     <li key={categoria.id}>

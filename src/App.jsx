@@ -10,6 +10,7 @@ import Contact from './components/Contact.jsx'
 import ThemeToggle from './components/ThemeToggle.jsx'
 import GitHubRepos from './components/GitHubRepos.jsx'
 import LanguageToggle from './components/LanguageToggle.jsx'
+import Navbar from './components/Navbar.jsx'
 
 function App() {
   const [oscuro, setOscuro] = useState(() => {
@@ -55,6 +56,7 @@ function App() {
         <ThemeToggle oscuro={oscuro} cambiarTema={cambiarTema} />
         <LanguageToggle idioma={idioma} cambiarIdioma={cambiarIdioma} />
 
+        <Navbar />
         <Header nombre="Daniel Díaz Millán" titulo={idioma === 'es' ? 'Desarrollador Web' : 'Web Developer'} />
         <main className='max-w-3xl mx-auto px-6 pb-16'>
           <About />
