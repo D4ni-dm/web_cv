@@ -3,7 +3,7 @@ function LanguageToggle({ idioma, cambiarIdioma }) {
         <button
             onClick={cambiarIdioma}
             aria-label={idioma === 'es' ? 'Switch to English' : 'Cambiar a español'}
-            className="fixed top-4 right-16 p-2 rounded-full text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-800"
+            className="fixed top-4 right-16 w-10 h-10 flex items-center justify-center rounded-full text-sm font-bold bg-white/20 hover:bg-white/30 text-white backdrop-blur"
         >
             {idioma === 'es' ? 'EN' : 'ES'}
         </button>

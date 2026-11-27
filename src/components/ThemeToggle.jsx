@@ -3,7 +3,7 @@ function ThemeToggle({ oscuro, cambiarTema }) {
         <button 
             onClick={cambiarTema} 
             aria-label={oscuro ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'} 
-            className="fixed top-4 right-4 p-2 rounded-full text-2xl hover:bg-gray-200 dark:hover:bg-gray-800"
+            className="fixed top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full text-xl bg-white/20 hover:bg-white/30 text-white backdrop-blur"
         >
             {oscuro ? '☀️' : '🌙'}
         </button>
