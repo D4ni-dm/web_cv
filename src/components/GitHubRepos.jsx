@@ -4,6 +4,7 @@ import { IdiomaContext } from '../IdiomaContext.js'
 import { useEffect, useState } from "react"
 import Section from "./Section.jsx"
 import Tag from "./Tag.jsx"
+import proyectos from '../data/proyectos.js'
 
 function GitHubRepos() {
     const [repos, setRepos] = useState([])
@@ -39,8 +40,8 @@ function GitHubRepos() {
             {cargando && <p>{t.cargando}</p>}
             {error && <p className="text-red-600 dark:text-red-400">{t.errorRepos} {error}</p>}
             {!cargando && !error && (
-                <ul className="space-y-6">
-                    {repos.filter((repo) => !repo.fork).map((repo) => (
+                <ul className="space-y-6">  
+                    {repos.filter((repo) => !repo.fork && !proyectos.some((proyecto) => proyecto.repo === repo.html_url)).map((repo) => (
                         <li key={repo.id}>
                             <h3 className="text-lg font-semibold">
                                 <a href={repo.html_url} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline dark:text-blue-400">

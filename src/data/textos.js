@@ -5,7 +5,7 @@ const textos = {
         formacion: 'Formación',
         habilidades: 'Habilidades',
         proyectos: 'Proyectos',
-        repositorios: 'Repositorios de GitHub',
+        repositorios: 'Otros repositorios',
         contacto: 'Contacto',
 
         verRepo: 'Ver repositorio en GitHub',
@@ -28,7 +28,7 @@ const textos = {
         formacion: 'Education',
         habilidades: 'Skills',
         proyectos: 'Projects',
-        repositorios: 'GitHub repositories',
+        repositorios: 'Other repositories',
         contacto: 'Contact',
 
         verRepo: 'View repository on GitHub',
