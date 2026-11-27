@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import Section from "./Section.jsx"
 import Tag from "./Tag.jsx"
 import proyectos from '../data/proyectos.js'
+import Card from './Card.jsx'
 
 function GitHubRepos() {
     const [repos, setRepos] = useState([])
@@ -42,7 +43,7 @@ function GitHubRepos() {
             {!cargando && !error && (
                 <ul className="space-y-6">  
                     {repos.filter((repo) => !repo.fork && !proyectos.some((proyecto) => proyecto.repo === repo.html_url)).map((repo) => (
-                        <li key={repo.id}>
+                        <Card key={repo.id}>
                             <h3 className="text-lg font-semibold">
                                 <a href={repo.html_url} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline dark:text-blue-400">
                                     {repo.name}
@@ -54,7 +55,7 @@ function GitHubRepos() {
                                     <Tag>{repo.language}</Tag>
                                 </ul>
                             )}
-                        </li>
+                        </Card>
                     ))}
                 </ul>
             )}

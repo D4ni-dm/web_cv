@@ -4,6 +4,7 @@ import { IdiomaContext } from '../IdiomaContext.js'
 import Tag from './Tag.jsx'
 import Section from './Section.jsx'
 import proyectos from '../data/proyectos.js'
+import Card from './Card.jsx'
 
 function Projects() {
     const idioma = useContext(IdiomaContext)
@@ -13,7 +14,7 @@ function Projects() {
         <Section titulo={t.proyectos}>
             <ul className='space-y-6'>
                 {proyectos.map((proyecto) => (
-                    <li key={proyecto.id}>
+                    <Card key={proyecto.id}>
                         <h3 className='text-lg font-semibold text-gray-900 dark:text-white'>{proyecto.nombre[idioma]}</h3>
                         <p className='mt-2 leading-relaxed'>{proyecto.descripcion[idioma]}</p>
                         <ul className='flex flex-wrap gap-2 mt-3'>
@@ -25,7 +26,7 @@ function Projects() {
                             <a href={proyecto.repo} target='_blank' rel='noreferrer' className='text-blue-600 font-medium hover:underline dark:text-blue-400'>{t.verRepo}</a>
                             {proyecto.demo && <a href={proyecto.demo} target='_blank' rel='noreferrer' className='text-blue-600 font-medium hover:underline dark:text-blue-400'>{t.verDemo}</a>}
                         </div>
-                    </li>
+                    </Card>
                 ))}
             </ul>
         </Section>

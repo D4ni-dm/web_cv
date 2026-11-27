@@ -3,6 +3,7 @@ import textos from '../data/textos.js'
 import { IdiomaContext } from '../IdiomaContext.js'
 import Section from './Section.jsx'
 import experiencias from '../data/experiencia.js'
+import Card from './Card.jsx'
 
 function Experience() {
     const idioma = useContext(IdiomaContext)
@@ -12,7 +13,7 @@ function Experience() {
         <Section titulo={t.experiencia}>
             <ul className='space-y-8'>
                 {experiencias.map((experiencia) => (
-                    <li key={experiencia.id}>
+                    <Card key={experiencia.id}>
                         <h3 className='text-lg font-semibold text-gray-900 dark:text-white'>{experiencia.puesto[idioma]}</h3>
                         <p className='text-blue-600 font-medium dark:text-blue-400'>{experiencia.empresa}</p>
                         <p className='text-sm text-gray-500 dark:text-gray-400'>{experiencia.inicio[idioma]} - {experiencia.fin[idioma]}</p>
@@ -21,7 +22,7 @@ function Experience() {
                                 <li key={tarea}>{tarea}</li>
                             ))}
                         </ul>
-                    </li>
+                    </Card>
                 ))}
             </ul>
         </Section>
